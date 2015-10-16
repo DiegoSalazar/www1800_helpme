@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem "twilio-ruby"
+gem "pocketsphinx-ruby"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
