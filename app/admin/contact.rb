@@ -1,4 +1,5 @@
 ActiveAdmin.register Contact do
+  permit_params :verbal_name, :first_name, :middle_name, :last_name, :phone, :import_source
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
