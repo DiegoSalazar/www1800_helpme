@@ -1,37 +1,46 @@
-<h1>Listing contacts</h1>
-
-<table>
+<%- model_class = Contact -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Contact %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Verbal name</th>
-      <th>First name</th>
-      <th>Middle name</th>
-      <th>Last name</th>
-      <th>Phone</th>
-      <th>Import source</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:verbal_name) %></th>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
+      <th><%= model_class.human_attribute_name(:middle_name) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:import_source) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= contact.user %></td>
+        <td><%= contact.id %></td>
         <td><%= contact.verbal_name %></td>
         <td><%= contact.first_name %></td>
         <td><%= contact.middle_name %></td>
         <td><%= contact.last_name %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.import_source %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l contact.created_at, format: :long %></td>
+        <td>
+          <%= link_to contact_path(contact), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to contact_path(contact), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_contact_path,
+            :class => 'btn btn-primary' %>
