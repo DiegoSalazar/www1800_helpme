@@ -177,6 +177,7 @@ GEM
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
+    puma (3.4.0)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -291,6 +292,7 @@ DEPENDENCIES
   omniauth-facebook
   pg
   pocketsphinx-ruby
+  puma
   rails (= 4.1.4)
   rails_config
   rspec-rails
@@ -303,3 +305,9 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   validates_formatting_of
+
+RUBY VERSION
+   ruby 2.3.0p0
+
+BUNDLED WITH
+   1.12.5
