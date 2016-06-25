@@ -54,9 +54,7 @@ group :test do
   gem 'database_cleaner'
 end
 
-gem 'rails_config'
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'google-analytics-rails'
