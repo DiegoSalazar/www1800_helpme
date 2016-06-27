@@ -55,6 +55,7 @@ group :test do
 end
 
 gem 'devise'
+gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'google-analytics-rails'
