@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :calls
+
   post "/answer", to: "operator#answer_call"
   post "/accept/name", to: "operator#accept_name"
 

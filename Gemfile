@@ -43,6 +43,10 @@ gem 'spring',        group: :development
 
 gem 'bundler'
 
+group :development do
+  gem 'annotate'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -64,3 +68,5 @@ gem 'bootstrap-sass-extras'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'puma'
+gem 'bootstrap-generators', '~> 3.3.4'
+gem 'slim-rails'

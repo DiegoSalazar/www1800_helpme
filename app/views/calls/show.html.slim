@@ -1,0 +1,62 @@
+.page-header
+  = link_to calls_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_call_path(@call), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show call
+dl.dl-horizontal
+  dt
+    | Called:
+  dd
+    = @call.called
+  dt
+    | From:
+  dd
+    = @call.from
+  dt
+    | Direction:
+  dd
+    = @call.direction
+  dt
+    | Status:
+  dd
+    = @call.status
+  dt
+    | Recording url:
+  dd
+    = @call.recording_url
+  dt
+    | Recording duration:
+  dd
+    = @call.recording_duration
+  dt
+    | Call sid:
+  dd
+    = @call.call_sid
+  dt
+    | Account sid:
+  dd
+    = @call.account_sid
+  dt
+    | From zip:
+  dd
+    = @call.from_zip
+  dt
+    | From city:
+  dd
+    = @call.from_city
+  dt
+    | From state:
+  dd
+    = @call.from_state
+  dt
+    | From country:
+  dd
+    = @call.from_country
+  dt
+    | Meta:
+  dd
+    = @call.meta

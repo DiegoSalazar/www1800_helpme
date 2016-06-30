@@ -1,0 +1,75 @@
+.page-header
+  = link_to new_call_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Call
+  h1
+    | Listing calls
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Called
+        th
+          | From
+        th
+          | Direction
+        th
+          | Status
+        th
+          | Recording url
+        th
+          | Recording duration
+        th
+          | Call sid
+        th
+          | Account sid
+        th
+          | From zip
+        th
+          | From city
+        th
+          | From state
+        th
+          | From country
+        th
+          | Meta
+        th
+        th
+        th
+    tbody
+      - @calls.each do | call |
+        tr
+          td
+            = call.called
+          td
+            = call.from
+          td
+            = call.direction
+          td
+            = call.status
+          td
+            = call.recording_url
+          td
+            = call.recording_duration
+          td
+            = call.call_sid
+          td
+            = call.account_sid
+          td
+            = call.from_zip
+          td
+            = call.from_city
+          td
+            = call.from_state
+          td
+            = call.from_country
+          td
+            = call.meta
+          td
+            = link_to 'Show', call
+          td
+            = link_to 'Edit', edit_call_path(call) 
+          td
+            = link_to 'Destroy', call, method: :delete, data: { confirm: 'Are you sure?' } 

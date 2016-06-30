@@ -1,0 +1,67 @@
+= form_for(@call, html: { class: "form-horizontal", role: "form" }) do |f|
+  - if @call.errors.any?
+    .alert.alert-danger.alert-dismissable role="alert"
+      button.close type="button" data-dismiss="alert"
+        span aria-hidden="true"
+          | &times;
+        span.sr-only
+          | Close
+      h4= "#{pluralize(@call.errors.count,"error")} prohibited this call from being saved:"
+      ul
+        - @call.errors.full_messages.each do |msg|
+          li= msg
+  .form-group
+    = f.label :called, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :called, class: "form-control"
+  .form-group
+    = f.label :from, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :from, class: "form-control"
+  .form-group
+    = f.label :direction, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :direction, class: "form-control"
+  .form-group
+    = f.label :status, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :status, class: "form-control"
+  .form-group
+    = f.label :recording_url, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :recording_url, class: "form-control"
+  .form-group
+    = f.label :recording_duration, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :recording_duration, class: "form-control"
+  .form-group
+    = f.label :call_sid, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :call_sid, class: "form-control"
+  .form-group
+    = f.label :account_sid, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :account_sid, class: "form-control"
+  .form-group
+    = f.label :from_zip, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :from_zip, class: "form-control"
+  .form-group
+    = f.label :from_city, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :from_city, class: "form-control"
+  .form-group
+    = f.label :from_state, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :from_state, class: "form-control"
+  .form-group
+    = f.label :from_country, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :from_country, class: "form-control"
+  .form-group
+    = f.label :meta, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :meta, class: "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit class: "btn btn-primary"
